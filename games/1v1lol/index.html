@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1v1 lol - Hushy Games</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Button Style */
+        button {
+            padding: 10px 20px;
+            background-color: #0078D4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Added margin for spacing */
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        /* Description Style */
+        .game-description {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .update-date {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hushy Games</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Games</a></li>
+                <li><a href="/about.html">About</a></li> 
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="game-details">
+        <h2>1v1 lol</h2>
+        <div class="game-content">
+            <iframe id="gameFrame" src="game.html" frameborder="0" width="100%" height="800px"></iframe>
+            <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
+        </div>
+        <div class="game-description">
+            <p>1v1 LOL the online building simulator and third person shooting game
+
+            You won't believe the excitement that awaits you in the world of 1v1! Picture this: an online building simulator and third-person shooting game that will leave you on the edge of your seat. It's a battle royale like no other, offering a plethora of game modes to keep you entertained for hours on end.
+
+            In 1v1, you'll engage in heart-pounding build fights where your construction skills are put to the ultimate test. Imagine strategizing and building your way to victory, outmaneuvering your opponents with lightning-fast reflexes and cunning tactics. The adrenaline rush is simply indescribable!
+
+            But that's not all, my friend. Get ready for intense fights, where your close-quarters combat skills will truly shine. With lightning-quick reflexes and precise aim, you'll unleash a barrage of shots upon your enemies, leaving them in awe of your skills.
+
+            And let's not forget about the exhilarating zone wars! You'll find yourself battling it out in ever-shrinking zones, where survival becomes a nail-biting challenge. Only the strongest and most strategic players will emerge victorious.
+
+            The best part? You'll be competing against real players from around the globe, each one hungry for that sweet taste of victory. Every match is a chance to prove your worth and cement your place as the last man standing. Can you imagine the thrill of achieving the great and coveted victory?
+
+            So, prepare yourself for the ultimate test of skill, strategy, and determination. 1v1 will take you on an epic journey where every match is a new adventure. Get ready to build, shoot, and conquer your way to victory like never before. This game will ignite your passion for competitive gaming and keep you coming back for more, time and time again. Let the battle begin!</p>
+            <p class="update-date">Last updated: February 7, 2024</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Hushy Games. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleFullscreen() {
+            var iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>

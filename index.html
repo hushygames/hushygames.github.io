@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hushy games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+         <h1>Hushy Games<sub class="beta-label" > Beta</sub></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for games..." oninput="searchGames()">
+        </div>
+    </header>
+    <section class="hero">
+        <h2>Welcome to Hushy Games</h2>
+        <p>Discover thousands of games to play directly in your browser.</p>
+    </section>
+    <section class="games">
+        <h2>Featured Games</h2>
+      <div class="game-card">
+          <img src="games/1/logo.png" alt="1">
+          <h3>1</h3>
+          <p>1 is a single-player sliding block puzzle game designed by Rkh0.</p>
+          <a href="games/1/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+          <img src="games/1v1lol/logo.png" alt="1v1lol">
+          <h3>1v1.lol</h3>
+          <p>1v1 LOL the online building simulator and third person shooting game</p>
+          <a href="games/10-103/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+          <img src="games/10-103/logo.png" alt="10-103">
+          <h3>10-103</h3>
+          <p>This is a short horror adventure where you role-play as a hardened Spec Op making his way through the dark hell that became the underground facility.</p>
+          <a href="games/10-103/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+          <img src="games/10-minutes-till-dawn/logo.png" alt="10-minutes-till-dawn">
+          <h3>10 minutes till dawn</h3>
+          <p>10 Minutes Till Dawn is an action bullet-hell roguelite game to attack the enemies and survive for 10 minutes!</p>
+          <a href="games/10-minutes-till-dawn/index.html">Play Now</a>
+      </div>
+        <div class="game-card">
+            <img src="games/2048/logo.png" alt="2048">
+            <h3>2048</h3>
+            <p>2048 is a single-player sliding block puzzle game designed by Italian web developer Gabriele Cirulli.</p>
+            <a href="games/2048/index.html">Play Now</a>
+        </div>
+      <div class="game-card">
+          <img src="games/achievementunlocked/logo.png" alt="achievment-unlocked">
+          <h3>achievement unlocked</h3>
+          <p>Who needs gameplay when you have ACHIEVEMENTS? Don't worry about beating levels, finding ways to kill enemies, or beating the final boss... there are none. Focus solely on your ultimate destiny... doing random tasks that have nothing to do with anything. Metagame yourself with ease! Self-satisfaction never felt so... artificial!</p>
+         <a href="games/archievementunlocked/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+          <img src="games/asciispace/logo.png" alt="ASCIISPACE">
+          <h3>ASCII Space</h3>
+          <p>Travel trough ASCII space in the hunt for the evil O.</p>
+         <a href="games/asciispace/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+          <img src="games/a-dance-of-fire-and-ice/logo.png" alt="a-dance-of-fire-and-ice">
+          <h3>A dance of fire and ice</h3>
+          <p>A Dance of Fire and Ice is a strict rhythm game. Keep your focus as you guide two orbiting planets along a winding path without breaking their perfect equilibrium.</p>
+         <a href="games/a-dance-of-fire-and-ice/index.html">Play Now</a>
+      </div>
+        <div class="game-card">
+            <img src="games/monkeymart/logo.png" alt="monkey mart">
+            <h3>monkey mart</h3>
+            <p>Monkey Mart is an exciting and captivating mobile game that takes you on a whimsical journey into a world where monkeys run their very own supermarket.</p>
+            <a href="games/monkeymart/index.html">Play Now</a>
+        </div>
+        <!-- Repeat this block for each game -->
+    </section>
+    <footer>
+        <p>&copy; 2024 Hushy Games. All rights reserved.</p>
+    </footer>
+    <script>
+        function searchGames() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var games = document.querySelectorAll(".game-card");
+
+            games.forEach(function(game) {
+                var title = game.querySelector("h3").innerText.toLowerCase();
+                var description = game.querySelector("p").innerText.toLowerCase();
+
+                if (title.includes(input) || description.includes(input)) {
+                    game.style.display = "inline-block";
+                } else {
+                    game.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
