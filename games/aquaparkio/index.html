@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aquapark.io - Hushy Games</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Button Style */
+        button {
+            padding: 10px 20px;
+            background-color: #0078D4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Added margin for spacing */
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        /* Description Style */
+        .game-description {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .update-date {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hushy Games</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Games</a></li>
+                <li><a href="/about.html">About</a></li> 
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="game-details">
+        <h2>aquapark.io</h2>
+        <div class="game-content">
+            <iframe id="gameFrame" src="game.html" frameborder="0" width="100%" height="800px"></iframe>
+            <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
+        </div>
+        <div class="game-description">
+            <p>Aquapark.io is the ultimate water slide adventure game that takes you on a thrilling ride through multiple levels of challenging obstacles and water slides. With realistic physics and addictive gameplay, this game is perfect for anyone looking for a fun and exciting way to spend their free time. Race against your friends or other players from around the world to see who can reach the end of the slide first. Download now and experience the ultimate water slide adventure!</p>
+            <p class="update-date">Last updated: February 8, 2024</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Hushy Games. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleFullscreen() {
+            var iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
