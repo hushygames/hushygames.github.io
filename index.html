@@ -24,6 +24,7 @@
     <section class="hero">
         <h2>Welcome to Hushy Games</h2>
         <p>Discover thousands of games to play directly in your browser.</p>
+        <p id="onlineUsersCount"></p>
     </section>
     <section class="games">
         <h2>Featured Games</h2>
@@ -135,6 +136,17 @@
         <p>&copy; 2024 Hushy Games. All rights reserved.</p>
     </footer>
     <script>
+        function fetchOnlineUsersCount() {
+            fetch('online_users.php')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('onlineUsersCount').innerText = `Online Users: ${data.onlineUsers}`;
+                })
+                .catch(error => console.error('Error fetching online users count:', error));
+        }
+
+        window.onload = fetchOnlineUsersCount;
+
         function searchGames() {
             var input = document.getElementById("searchInput").value.toLowerCase();
             var games = document.querySelectorAll(".game-card");
