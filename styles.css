@@ -119,6 +119,30 @@ nav ul li a {
     background-color: #005a9e;
 }
 
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+.team-member {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.team-member img {
+    width: 200px;
+    border-radius: 50%;
+    margin: 0 20px;
+}
+
+.team-member p {
+    width: 300px;
+    margin: 20px;
+}
+
 footer {
     background-color: #0078D4;
     color: #fff;
