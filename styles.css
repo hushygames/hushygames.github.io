@@ -1,18 +1,19 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F4F4F4;
-    color: #333;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #0078D4;
+    background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -28,13 +29,17 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #66c2ff;
 }
 
 .beta-label {
-    font-size: smaller; /* Kleiner lettertype voor het "Beta" label */
-    vertical-align: sub; /* Ondersteunt uitlijning met de basislijn van de hoofdtekst */
+    font-size: smaller;
+    vertical-align: sub;
 }
-
 
 .search-box {
     margin-top: 20px;
@@ -44,9 +49,11 @@ nav ul li a {
 .search-box input[type="text"] {
     padding: 10px;
     width: 300px;
-    border: 1px solid #ccc;
+    border: 1px solid #666;
     border-radius: 5px;
     font-size: 16px;
+    background-color: #333;
+    color: #fff;
 }
 
 .search-box button {
@@ -72,37 +79,36 @@ nav ul li a {
 .games {
     padding: 50px 20px;
     text-align: center;
-}
-
-.games h2 {
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .game-card {
-    display: inline-block;
-    vertical-align: top;
-    width: calc(50% - 20px);
+    flex: 0 0 calc(30% - 20px);
     margin: 0 10px 20px;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .game-card img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-    max-height: 200px; /* Hier is de wijziging om de hoogte van het logo aan te passen */
+    max-height: 200px;
 }
 
 .game-card h3 {
     margin-bottom: 10px;
+    color: #fff;
 }
 
 .game-card p {
     margin-bottom: 10px;
+    color: #ccc;
 }
 
 .game-card a {
@@ -144,7 +150,7 @@ nav ul li a {
 }
 
 footer {
-    background-color: #0078D4;
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
