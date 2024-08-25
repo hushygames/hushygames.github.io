@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewels Blitz 4 - Hushy Games</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Button Style */
+        button {
+            padding: 10px 20px;
+            background-color: #0078D4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Added margin for spacing */
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        /* Description Style */
+        .game-description {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .update-date {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hushy Games</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Games</a></li>
+                <li><a href="/about.html">About</a></li> 
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="game-details">
+        <h2>Jewels Blitz 4</h2>
+        <div class="game-content">
+            <iframe id="iplayer-game" src="https://html5.gamedistribution.com/9227816b3df6466fbbd44f4a95f66637/?gd_sdk_referrer_url=https://gamedistribution.com/games/jewels-blitz-4/" frameborder="0" width="100%" height="800px"></iframe>
+            <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
+        </div>
+        <div class="game-description">
+            <p>Jewels Blitz 4, the long-awaited fourth installment of the legendary Match 3 puzzle series, takes you deep into the jungles of Central America. Meet Maya, the young Mayan princess, and help her find her people's lost treasures. Combine the colorful gems and use their secretive powers to remove jungle obstacles or magical seals, soothe volcanoes, and secure Mayan relics. Go treasure hunting and complete daily missions and challenges to earn gold, magical items and other rewards that will help you solve the more than 600 levels. Immerse yourself in the mysterious world of the Maya and play Jewels Blitz 4 now for free. Many hours of puzzle fun are guaranteed!</p>
+            <p class="update-date">Last updated: August 25, 2024</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Hushy Games. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleFullscreen() {
+            var iframe = document.getElementById('iplayer-game');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915300167971740" crossorigin="anonymous"></script>
+</body>
+</html>
