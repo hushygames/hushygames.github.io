@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodoko - Hushy Games</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Button Style */
+        button {
+            padding: 10px 20px;
+            background-color: #0078D4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Added margin for spacing */
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        /* Description Style */
+        .game-description {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .update-date {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hushy Games</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Games</a></li>
+                <li><a href="/about.html">About</a></li> 
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="game-details">
+        <h2>Woodoko</h2>
+        <div class="game-content">
+            <iframe id="gameFrame" src="game.html" frameborder="0" width="100%" height="800px"></iframe>
+            <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
+        </div>
+        <div class="game-description">
+            <p>Relax & test your IQ with our logic puzzle games! Place wood blocks in the 9x9 board & fill rows, columns, or squares to clear blocks of daily puzzle. Play the wood block puzzle for as long as you can without running out of space to beat your high score! Play hours of addictive games & logic puzzle with Woodoku! You can even play our addictive puzzle games for adults offline. Need an IQ boost? Play our wooden puzzle block games today!</p>
+            <p class="update-date">Last updated: August 25, 2024</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Hushy Games. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleFullscreen() {
+            var iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915300167971740" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<!-- Mirrored from html5.gamedistribution.com/rvvASMiM/9ed0d4b243484a6cb2456068085e0aa2/index.html?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2dhbWUtZ2FtZS5jb20vIiwicGFyZW50RG9tYWluIjoiZ2FtZS1nYW1lLmNvbSIsInRvcERvbWFpbiI6ImdhbWUtZ2FtZS5jb20iLCJoYXNJbXByZXNzaW9uIjp0cnVlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Aug 2024 18:06:36 GMT -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Woodoku</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background: #000416;
+		}
+
+		#container {
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			/* background:#222c36; */
+			background: #000416;
+			overflow: hidden;
+		}
+
+		#logo {
+			position: absolute;
+			display: block;
+			top: 50%;
+			left: 50%;
+			width: 80%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			text-align: center;
+			overflow: hidden;
+		}
+
+		div.button {
+			background: #222c36;
+			padding: 0 8px;
+			text-align: center;
+			border-radius: 3px;
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		div.moregames {
+			height: 38px;
+			line-height: 38px;
+			padding: 0 5px;
+			margin: 1px 1px 0 0;
+			float: left;
+			color: #333;
+			text-align: left;
+			font-size: 15px;
+			position: relative;
+			z-index: 10;
+		}
+
+		div.fullscreen {
+			margin: 1px 1px 0 0;
+			position: absolute;
+			right: 5px;
+			height: 38px;
+			line-height: 38px;
+			display: inline-flex;
+			font-weight: bold;
+		}
+
+		div.fullscreen img {
+			padding-left: 5px;
+		}
+	</style>
+	<script src="../../../h5gamessdk.yyggames.com/sdk/YYGGames.js"></script>
+	<script src="Build/UnityLoader.js"></script>
+	<script type="text/javascript">
+
+		function UnityProgress(gameInstance, progress) {
+			var ua = window.navigator.userAgent;
+			var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+			var webkit = !!ua.match(/WebKit/i);
+			var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+
+			if (!gameInstance.Module) {
+				return;
+			} else if (progress === "complete") {
+				document.getElementById("logo").style.display = "none";
+				// document.getElementById("FullscreenImg").style.display = "none";
+				//document.getElementById("sitelogo").style.display = "block";
+				return;
+			} else if (progress == 1) {
+				document.getElementById("loadinginfo").innerHTML = "PROCESSING...";
+			}
+			else if (progress >= 0.9) {
+				document.getElementById("loadinginfo").innerHTML = "Loading: 99%";
+				//document.getElementById("sitelogo").style.display = "none";
+			}
+			else if (progress > 0) {
+				document.getElementById("loadinginfo").innerHTML = "Loading: " + Math.round(progress * 100) + "%";
+				//document.getElementById("sitelogo").style.display = "none";
+			}
+
+			gameInstance.container.onmouseup = function () {
+				if (!iOSSafari)
+					openLink();
+			}
+
+		}
+		function openLink() {
+			console.log("openLink<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+			if (btnIdLogo > 0 && isLogoClicked == true) {
+				switch (btnIdLogo) {
+					case 1:
+						CreateLinksInGame('Tiles-Hop', 'MenuScene', 'logo');
+						break;
+					case 2:
+						CreateLinksInGame('Tiles-Hop', 'GameScene', 'logo');
+						break;
+					case 3:
+						CreateLinksInGame('Tiles-Hop', 'GameoverScene', 'logo');
+						break;
+					case 4:
+						CreateLinksInGame('Tiles-Hop', 'BallScene', 'logo');
+						break;
+				}
+				btnIdLogo = -1;
+				isLogoClicked = false;
+
+			}
+
+			else if (btnIdMore > 0 && isMoreClicked == true) {
+
+				switch (btnIdMore) {
+					case 1:
+						CreateLinksInGame('Tiles-Hop', 'MenuScene', 'logo');
+						break;
+					case 2:
+						CreateLinksInGame('Tiles-Hop', 'GameScene', 'logo');
+						break;
+					case 3:
+						CreateLinksInGame('Tiles-Hop', 'GameoverScene', 'logo');
+						break; 
+					case 4:
+						CreateLinksInGame('Tiles-Hop', 'BallScene', 'logo');
+						break;
+				}
+				btnIdMore = -1;
+				isMoreClicked = false;
+			}
+		}
+		function CreateLinksInGame(NameID, Screen, Button, GameId) {
+			GameId = typeof GameId !== 'undefined' ? GameId : "";
+			var domain = document.referrer;
+			var url = "https://www.yiv.com/";
+			if (typeof GameId === 'undefined' || GameId == "" || GameId == "undefined") {
+
+			} else {
+				//url = url+"&pic="+GameId;
+				url = url + "?pic=" + GameId;
+			}
+			if (typeof domain === 'undefined' || domain == "" || domain == "undefined") {
+				domain = "unknown";
+			} else {
+				domain = domain.split('https://html5.gamedistribution.com/')[2];
+			}
+			if (url.indexOf("?") > -1) {
+				url = url + "&";
+			} else {
+				url = url + "?";
+			}
+			console.log(">>>>>>>>>>>>>>>>>>>>CreateLinksInGame");
+			url = url + "utm_source=" + domain + "&utm_medium=" + Screen + "-" + Button + "&utm_campaign=game-" + NameID;
+			window.open(url);
+		}
+		var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {
+			onProgress: UnityProgress,
+			Module: {
+				onRuntimeInitialized: function () { UnityProgress(gameInstance, "complete") }
+			}
+		});
+		var btnIdLogo = -1;
+		var isLogoClicked = false;
+		var btnIdMore = -1;
+		var isMoreClicked = false;
+
+
+		function FitScreen() {
+			var w = 440;
+			var h = 750;
+			var availWidth = window.innerWidth;
+			var availHeight = window.innerHeight;
+
+			var canvas = document.getElementById("#canvas");
+			if (availWidth / availHeight > w / h) {
+				height = availHeight;
+				width = (height * w / h);
+			} else {
+				width = availWidth;
+				height = width * h / w;
+			}
+
+			document.getElementById("container").style.width = width + "px";
+			document.getElementById("container").style.height = (height) + "px";
+			document.getElementById("gameContainer").style.width = width + "px";
+			document.getElementById("gameContainer").style.height = height + "px";
+
+			document.getElementById("logo").style.width = width * 0.8 + "px";
+			document.getElementById("loadinginfo").style.fontSize = width * 0.04 + "px";
+			canvas.style.width = "100%";
+			canvas.style.height = "100%";
+			if (window.WEBAudioMute) {
+				window.WEBAudioMute(false);
+			}
+		}
+		function mute() {
+			if (window.WEBAudioMute) {
+				window.WEBAudioMute(true);
+			}
+		}
+	</script>
+	<script src="../../../www.bestgames.com/forgame/functionseb62.js?0123"></script>
+	<script src="../../../www.bestgames.com/ShowGames.js"></script>
+	<script>
+		gamesBest = Games;
+		linkBest = CreateLinksInGame;
+	</script>
+	<script src="../../../www.cargames.com/forgame/functionseb62.js?0123"></script>
+	<script src="../../../www.cargames.com/ShowGames.js"></script>
+	<script>
+		gamesCar = Games;
+		linkCar = CreateLinksInGame;
+	</script>
+	<script type="text/javascript">
+		function openWindow(Screen, Button, NameId, website) {
+			document.onmouseup = function () {
+				switch (website.trim().toLowerCase()) {
+					case "bestgames":
+						GameId = GetGameIdByNameId(NameId, gamesBest);
+						linkBest("YYG2021", Screen, Button, GameId);
+						break;
+					case "cargames":
+						GameId = GetGameIdByNameId(NameId, gamesCar);
+						linkCar("YYG2021", Screen, Button, GameId);
+						break;
+					default:
+						console.log(website + " is error");
+				}
+				document.onmouseup = null;
+			}
+		}
+		//随机一个nameId
+		function GetNameIdByRandom(len, website) {
+			var gamesArr;
+			switch (website.trim().toLowerCase()) {
+				case "bestgames":
+					gamesArr = gamesBest;
+					break;
+				case "cargames":
+					gamesArr = gamesCar;
+					break;
+				default:
+					console.log(website + " is error");
+			}
+			var nameIdArray = new Array();
+			var separator = ',';
+			for (var i = 0; i < len; i++) {
+				var randomIndex;
+				var nameId;
+				do {
+					randomIndex = Math.floor(Math.random() * (gamesArr.length));
+					nameId = gamesArr[randomIndex]['nameid'];
+				} while (nameIdArray.includes(nameId) && len <= gamesArr.length);
+				nameIdArray[i] = nameId;
+			}
+			nameIdArray[len] = website;
+			var nameIds = nameIdArray.join(separator);
+			console.log(nameIds);
+			gameInstance.SendMessage("WWWLoader", "CallGetNameIds", nameIds);
+		}
+		//通过NameId获取GameId
+		function GetGameIdByNameId(NameId, Games) {
+			for (i = 0; i < Games.length; i++) {
+				if (Games[i]['nameid'] == NameId) {
+					return Games[i]['id'];
+				}
+			}
+			console.log("ShowGames.js not exist ", NameId, " correspond to vaule");
+			return "";
+		}
+		//直接根据网址打开网页
+		function openWindowByUrl(Url) {
+			var url = encodeURI(Url);
+			document.onmouseup = function () {
+				window.open(url);
+				document.onmouseup = null;
+			}
+		}
+	</script>
+</head>
+
+<body onFocus="FitScreen();" onLoad="FitScreen();" onResize="FitScreen();" onblur="mute();">
+	<div id="container">
+		<div id="gameContainer" style="width: 440px; height: 750px"></div>
+
+		<div id="logo">
+			<img src="img.jpg" width="100%" height="100%">
+			<img src="bestgames-logo.png"
+				style="bottom:-2px;position:absolute;left:50%;width:80%;transform: translate(-50%, 0%); cursor:pointer;"
+				onClick='linkBest("Woodoku","loading","logo")'>
+			<div id="loadinginfo"
+				style="position:absolute;bottom:0px;left:50%;width:50%;transform: translate(-50%, 0%);color:#a59d96;font-size:14px;">
+				Loading...
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+<!-- Mirrored from html5.gamedistribution.com/rvvASMiM/9ed0d4b243484a6cb2456068085e0aa2/index.html?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2dhbWUtZ2FtZS5jb20vIiwicGFyZW50RG9tYWluIjoiZ2FtZS1nYW1lLmNvbSIsInRvcERvbWFpbiI6ImdhbWUtZ2FtZS5jb20iLCJoYXNJbXByZXNzaW9uIjp0cnVlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Aug 2024 18:06:39 GMT -->
+</html>
