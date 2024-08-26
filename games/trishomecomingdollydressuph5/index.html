@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tris Homecoming Dolly Dressup H5 - Hushy Games</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Button Style */
+        button {
+            padding: 10px 20px;
+            background-color: #0078D4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Added margin for spacing */
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        /* Description Style */
+        .game-description {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .update-date {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hushy Games</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Games</a></li>
+                <li><a href="/about.html">About</a></li> 
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="game-details">
+        <h2>Tris Homecoming Dolly Dressup H5</h2>
+        <div class="game-content">
+            <iframe id="iplayer-game" src="https://html5.gamedistribution.com/d7e4cdde82a894b8f633e6d61a01ef15/?gd_sdk_referrer_url=https://gamedistribution.com/games/tris-fashionista-dolly-dress-up-h5/" frameborder="0" width="100%" height="800px"></iframe>
+            <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
+        </div>
+        <div class="game-description">
+            <p>Your favorite mystery boxes are back with Homecoming dresses for awesome Dolly Tris Practice your fashion skills by creating a stunning look for Tris and dont forget to save a picture for her high school scrapbook</p>
+            <p class="update-date">Last updated: August 26, 2024</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Hushy Games. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleFullscreen() {
+            var iframe = document.getElementById('iplayer-game');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915300167971740" crossorigin="anonymous"></script>
+</body>
+</html>
