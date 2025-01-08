@@ -4,64 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woodoku - Hushy Games</title>
-    <link rel="stylesheet" href="/styles.css">
     <style>
-        /* Button Style */
-        button {
-            padding: 10px 20px;
-            background-color: #0078D4;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul a:hover {
+            background-color: #45a049;
+        }
+
+        /* Algemene container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background-color: #fff;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Game Details Section */
+        .game-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-details iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+
+        .game-details button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
             color: #fff;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
+            font-size: 1rem;
             transition: background-color 0.3s ease;
-            margin-top: 10px; /* Added margin for spacing */
         }
 
-        button:hover {
-            background-color: #005a9e;
+        .game-details button:hover {
+            background-color: #45a049;
         }
 
-        /* Description Style */
         .game-description {
-            margin-top: 20px;
-            font-size: 14px;
-            line-height: 1.5;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
         }
 
-        .update-date {
+        .game-description .update-date {
             font-style: italic;
+            color: #777;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <h1>Hushy Games</h1>
+        <span class="beta-label">Beta</span>
         <nav>
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/index.html">Games</a></li>
-                <li><a href="/about.html">About</a></li> 
+                <li><a href="/about.html">About</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section class="game-details">
+
+    <!-- Game Details Section -->
+    <section class="hero">
         <h2>Woodoku</h2>
+        <p>Relax and test your IQ with our logic puzzle games!</p>
+    </section>
+
+    <section class="game-details container">
         <div class="game-content">
-            <iframe id="iplayer-game" src="https://html5.gamedistribution.com/9ed0d4b243484a6cb2456068085e0aa2/?gd_sdk_referrer_url=https://gamedistribution.com/games/woodoku/" frameborder="0" width="100%" height="800px"></iframe>
+            <iframe id="iplayer-game" src="https://html5.gamedistribution.com/9ed0d4b243484a6cb2456068085e0aa2/?gd_sdk_referrer_url=https://gamedistribution.com/games/woodoku/"></iframe>
             <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
         </div>
         <div class="game-description">
-            <p>Relax & test your IQ with our logic puzzle games! Place wood blocks in the 9x9 board & fill rows, columns, or squares to clear blocks of daily puzzle. Play the wood block puzzle for as long as you can without running out of space to beat your high score! Play hours of addictive games & logic puzzle with Woodoku! You can even play our addictive puzzle games for adults offline. Need an IQ boost? Play our wooden puzzle block games today!</p>
+            <p>
+                Place wood blocks in the 9x9 board & fill rows, columns, or squares to clear blocks. Play for as long as you can without running out of space to beat your high score! Need an IQ boost? Play Woodoku today!
+            </p>
             <p class="update-date">Last updated: August 25, 2024</p>
         </div>
     </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Hushy Games. All rights reserved.</p>
     </footer>
 
+    <!-- Fullscreen Toggle Script -->
     <script>
         function toggleFullscreen() {
             var iframe = document.getElementById('iplayer-game');
@@ -76,6 +192,5 @@
             }
         }
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5915300167971740" crossorigin="anonymous"></script>
 </body>
 </html>
